@@ -20,7 +20,7 @@ Create the following relationships:
 - A `Power` has many `Hero`s through `HeroPower`
 - A `HeroPower` belongs to a `Hero` and belongs to a `Power`
 
-![](/home/user/Development/CC/Phase-4-Code-Challenge-Superheroes/erd.jpeg)
+![](/erd.jpeg)
 
 
 ## Deployment Link
