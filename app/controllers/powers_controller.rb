@@ -22,6 +22,21 @@ class PowersController < ApplicationController
     def power_params
         params.permit(:description)
     end    
+
+    def find_power
+        Power.find(params[:id])
+    end
+    
+    def not_found_response
+        render json: {error: "Power not found"}, status: 404
+    end 
+    
+    def validation_errors(invalid)
+        render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
+    end
+        
 end
+
+
 
 

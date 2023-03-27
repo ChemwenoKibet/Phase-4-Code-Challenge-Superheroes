@@ -9,5 +9,10 @@ class HeroPowersController < ApplicationController
 
     def hero_power_params
         params.permit(:hero_id, :power_id, :strength)
+    end
+    
+    def validation_errors(invalid)
+        render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
+    end    
 end
 

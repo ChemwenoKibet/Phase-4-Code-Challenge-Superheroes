@@ -9,5 +9,9 @@ class HerosController < ApplicationController
     def show
         hero = Hero.find(params[:id])
         render json: hero, status: :ok, serializer: HeroPowerSerializer
+    end
+    
+    def not_found_response
+        render json: {error: "Hero not found"}, status: 404
     end    
 end
